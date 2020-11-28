@@ -11,15 +11,22 @@ export default {
 
   getCovidByState: function(queryCovid) {
 
-    const prevDate = new Date();
-    prevDate.setDate(prevDate.getDate() - 1);
-    const yyyy = prevDate.getFullYear();
-    const mm = prevDate.getMonth() + 1;
-    const dd = prevDate.getDate();
-    const dateAsOf = yyyy + "-" + mm + "-" + dd;
+    const startDate = new Date();
+    startDate.setDate(startDate.getDate() - 5);
+    const yyyyS = startDate.getFullYear();
+    const mmS = startDate.getMonth() + 1;
+    const ddS = startDate.getDate();
+    const queryStartDate = yyyyS + "-" + mmS + "-" + ddS;
+
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() - 1);
+    const yyyyE = endDate.getFullYear();
+    const mmE = endDate.getMonth() + 1;
+    const ddE = endDate.getDate();
+    const queryEndDate = yyyyE + "-" + mmE + "-" + ddE;
 
 
-    return axios.get("https://data.cdc.gov/resource/9mfq-cb36.json?submission_date=" + dateAsOf + "T00:00:00.000&state=" + queryCovid);
+    return axios.get("https://data.cdc.gov/resource/9mfq-cb36.json?$where=submission_date between '" + queryStartDate + "T00:00:00.000' and '" + queryEndDate + "T00:00:00.000'&state=" + queryCovid);
   },
 
   updateReadyKitByUser: function(username, data) {

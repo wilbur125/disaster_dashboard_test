@@ -33,6 +33,7 @@
     "mysql2": "^2.2.5",
     "node": "^15.2.1",
     "react-burger-menu": "^2.7.1",
+    "react-google-charts": "^3.0.15",
     "sequelize": "^6.3.5"
   }
 }
