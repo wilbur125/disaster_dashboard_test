@@ -25,7 +25,8 @@ class Dashboard extends Component {
             <Sidebar
               pageWrapId={"page-wrap"}
               outerContainerId={"outer-container"}
-            />
+              userName={this.state.currentUserName}>
+              </Sidebar>
             <h1>Welcome {this.state.currentUserName} !</h1>
             <br></br>
             <div className="card" id="Corgis">

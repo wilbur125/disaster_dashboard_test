@@ -22,7 +22,7 @@ class ReadyKit extends React.Component {
       medications: false
     }
 
-    API.getReadyKitByUser(this.props.username)
+    API.getReadyKitByUser(this.props.userName)
       .then(res => this.setState(res.data))
       .catch(console.err);
 
@@ -30,7 +30,7 @@ class ReadyKit extends React.Component {
   }
 
   sendStateChangeToBackend() {
-    API.updateReadyKitByUser(this.props.username, this.state)
+    API.updateReadyKitByUser(this.props.userName, this.state)
       .then(console.log)
       .catch(console.err);
   }
@@ -41,6 +41,7 @@ class ReadyKit extends React.Component {
 
   render() {
     console.log(this.state);
+    console.log(this.props.userName)
     return (
       <div>
         <input type="checkbox" name="water" onChange={this.handleInputChange} checked={this.state.water} /> Water
