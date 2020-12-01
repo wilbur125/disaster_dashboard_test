@@ -3,11 +3,15 @@ import React from 'react';
 import { bubble	 as Menu } from 'react-burger-menu';
 import ReadyKit from "../readykit";
 export default props => {
+  this.state = {
+    currentUserName: JSON.parse(localStorage.getItem("okta-token-storage"))
+      .idToken.claims.name,
+  };
   return (
     <Menu>
 
 <div>
-      <h2>Are you Ready?</h2>
+      <h2>{this.state.currentUserName} Are you Ready?</h2>
       </div>
       <div className="menu-item" id = 'readyKit' >
      <ReadyKit/>

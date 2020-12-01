@@ -46,7 +46,7 @@ class Meteroid extends React.Component {
           apiResults: finalData
 
         })
-        // console.log("this.state.apiResults", this.state.apiResults)
+
       })
       .catch(error => console.log('error', error));
   }
