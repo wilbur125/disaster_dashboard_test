@@ -169,3 +169,7 @@ top: 198px !important;
   outline-color: -webkit-focus-ring-color;
   outline-style: auto;
 }
+
+.list-group-item.list-group-item {
+  border: 0px;
+}

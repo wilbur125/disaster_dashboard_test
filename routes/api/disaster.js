@@ -1,7 +1,7 @@
 const fetchUrl = require('fetch').fetchUrl;
 
 function getDisasterEvents(callback) {
-  fetchUrl(`https://eonet.sci.gsfc.nasa.gov/api/v3/events?limit=11`, (error, meta, body) => {
+  fetchUrl(`https://eonet.sci.gsfc.nasa.gov/api/v3/events?limit=10`, (error, meta, body) => {
     const events = JSON.parse(body).events;
 
     const disasters = events.map(event => { return {
