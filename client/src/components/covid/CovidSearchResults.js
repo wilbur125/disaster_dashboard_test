@@ -19,15 +19,91 @@ class CovidSearchResults extends Component {
 
   searchCovid = queryCovid => {
     API.getCovidByState(queryCovid)
-      .then(res => this.setState({ result: res.data }))
+    .then(res => {
+      const data = [];
+      for (let i = 0; i < 5; i++) {
+        if (res.data[i]) {
+          data.push(res.data[i])
+        } else {
+          data.push(
+            {
+              new_case: 0,
+              new_death: 0
+            }
+          )
+        }
+      }
+    this.setState({ result: data })})
       .catch(err => console.log(err));
   };
 
   handleInputChange = event => {
-    const value = event.target.value;
+    const value = event.target.value.trim().toUpperCase();
     const name = event.target.name;
+    const stateAbbv = {
+      "AL": "Alabama",
+      "AK": "Alaska",
+      "AS": "American Samoa",
+      "AZ": "Arizona",
+      "AR": "Arkansas",
+      "CA": "California",
+      "CO": "Colorado",
+      "CT": "Connecticut",
+      "DE": "Delaware",
+      "DC": "District Of Columbia",
+      "FM": "Federated States Of Micronesia",
+      "FL": "Florida",
+      "GA": "Georgia",
+      "GU": "Guam",
+      "HI": "Hawaii",
+      "ID": "Idaho",
+      "IL": "Illinois",
+      "IN": "Indiana",
+      "IA": "Iowa",
+      "KS": "Kansas",
+      "KY": "Kentucky",
+      "LA": "Louisiana",
+      "ME": "Maine",
+      "MH": "Marshall Islands",
+      "MD": "Maryland",
+      "MA": "Massachusetts",
+      "MI": "Michigan",
+      "MN": "Minnesota",
+      "MS": "Mississippi",
+      "MO": "Missouri",
+      "MT": "Montana",
+      "NE": "Nebraska",
+      "NV": "Nevada",
+      "NH": "New Hampshire",
+      "NJ": "New Jersey",
+      "NM": "New Mexico",
+      "NY": "New York",
+      "NC": "North Carolina",
+      "ND": "North Dakota",
+      "MP": "Northern Mariana Islands",
+      "OH": "Ohio",
+      "OK": "Oklahoma",
+      "OR": "Oregon",
+      "PW": "Palau",
+      "PA": "Pennsylvania",
+      "PR": "Puerto Rico",
+      "RI": "Rhode Island",
+      "SC": "South Carolina",
+      "SD": "South Dakota",
+      "TN": "Tennessee",
+      "TX": "Texas",
+      "UT": "Utah",
+      "VT": "Vermont",
+      "VI": "Virgin Islands",
+      "VA": "Virginia",
+      "WA": "Washington",
+      "WV": "West Virginia",
+      "WI": "Wisconsin",
+      "WY": "Wyoming"
+    };
     this.setState({
-      [name]: value
+      [name]: value,
+      stateFullName: stateAbbv[value]
     });
   };
 
@@ -50,6 +126,7 @@ class CovidSearchResults extends Component {
                 handleFormSubmit={this.handleFormSubmit}
               />
               <CovidDetail
+                stateFullName={this.state.stateFullName}
                 newCases={this.state.result[4].new_case}
                 newDeaths={this.state.result[4].new_death}
               />

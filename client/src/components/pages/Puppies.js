@@ -31,11 +31,12 @@ class RandomGif extends React.Component {
 
   render() {
     return(
-      <div className='card-item'>
+      <div className='card-item-puppies'>
           <h1>{`Random ${this.state.keyword} image`}</h1>
+          <button onClick={this.loadImage} className='btn-loading'>woof!</button>
           <img src={this.state.imageSrc}alt="Random Puppy Gif"
             style={{width: "100%", maxHeight:"auto"}}/>
-        <button onClick={this.loadImage} className='btn-loadimg'>woof!</button>
+
       </div>
     );
   }

@@ -173,3 +173,21 @@ top: 198px !important;
 .list-group-item.list-group-item {
   border: 0px;
 }
+
+.card-item-puppies{
+  background-color: #373a47;
+  color: #f1f5f8;
+  width: 35em;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.btn-loading{
+    border: 2px solid rgba(0, 196, 204);
+    background-color: rgba(0, 196, 204);
+    color: #f1f5f8;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
