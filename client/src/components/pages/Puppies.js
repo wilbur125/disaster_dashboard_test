@@ -42,6 +42,6 @@ class RandomGif extends React.Component {
   }
 }
 
-// ReactDOM.render(<RandomGif apiKey="afea92ac6eff442ba6fca79368717d0d" keyword={SEARCH_KEY} />, document.getElementById('card'));
+
 
 export default RandomGif;

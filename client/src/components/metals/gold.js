@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Stocks extends React.Component {
+class Gold extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -13,10 +13,10 @@ class Stocks extends React.Component {
     this.loadImage();
   }
 
-  //Commenting out just to avoid hitting cap before presentation
+
   loadImage() {
 var myHeaders = new Headers();
-myHeaders.append("x-access-token", 'process.env.REACT_APP_METALAPIS');
+myHeaders.append("x-access-token", process.env.REACT_APP_METALAPIS);
 myHeaders.append("Content-Type", "application/json");
 
 var requestOptions = {
@@ -35,7 +35,7 @@ fetch("https://www.goldapi.io/api/XAU/USD", requestOptions)
   render() {
     return(
       <div className='card-item'>
-          <h1>{ '$' +  this.state.apiResults.price + ' USD'}  </h1>
+          <h1>{ '$' +  Number(this.state.apiResults.price).toLocaleString('en',{minimumFractionDigits: 2,maximumFractionDigits: 2}) + ' USD'}  </h1>
 
       </div>
     );
@@ -44,4 +44,4 @@ fetch("https://www.goldapi.io/api/XAU/USD", requestOptions)
 
 
 
-export default Stocks;
+export default Gold;

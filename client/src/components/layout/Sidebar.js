@@ -4,8 +4,8 @@ import { bubble as Menu } from 'react-burger-menu';
 import ReadyKit from "../readykit";
 
 class Sidebar extends React.Component{
-  constructor(props) {
-    super(props);
+  super(props) {
+
   }
 
   render() {

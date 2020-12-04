@@ -35,9 +35,9 @@ class Meteroid extends React.Component {
             'id': i + 1,
             Name: ` ` + apiData[i].name,
             'Hazardous': ` ` + apiData[i].is_potentially_hazardous_asteroid,
-            'MilesDiameter': ` ` + apiData[i].estimated_diameter.miles.estimated_diameter_max.toFixed(2),
-            'MissEarth': ` ` + Number(apiData[i].close_approach_data[0].miss_distance.miles).toFixed(2).toLocaleString('en'),
-            'VelocityMPH': ` ` + Number(apiData[i].close_approach_data[0].relative_velocity.miles_per_hour).toFixed(2)
+            'MilesDiameter': ` ` + apiData[i].estimated_diameter.miles.estimated_diameter_max.toLocaleString('en',{minimumFractionDigits: 2,maximumFractionDigits: 2}),
+            'MissEarth': ` ` + Number(apiData[i].close_approach_data[0].miss_distance.miles).toLocaleString('en',{minimumFractionDigits: 2,maximumFractionDigits: 2}),
+            'VelocityMPH': ` ` + Number(apiData[i].close_approach_data[0].relative_velocity.miles_per_hour).toLocaleString('en',{minimumFractionDigits: 2,maximumFractionDigits: 2})
           }
           finalData.push(meteroids)
 
@@ -54,7 +54,6 @@ class Meteroid extends React.Component {
   render() {
     return (
       <div>
-        {/* { <p>{JSON.stringify(this.state.apiResults.Name)}</p>} */}
         {this.state.apiResults.length ? (
         <List>
 

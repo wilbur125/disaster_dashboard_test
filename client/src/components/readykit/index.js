@@ -40,8 +40,7 @@ class ReadyKit extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-    console.log(this.props.userName)
+
     return (
       <div>
         <input type="checkbox" name="water" onChange={this.handleInputChange} checked={this.state.water} /> Water

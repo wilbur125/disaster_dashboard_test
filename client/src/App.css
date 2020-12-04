@@ -11,9 +11,15 @@ body {
   );
 }
 
+.nav-link {
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 38px
+}
 
 .navbar-brand {
-
   font-size: 50px;
   height: 80px;
   margin-bottom: 10px;
@@ -62,13 +68,12 @@ footer {
   padding-top: 10px;
 }
 
-
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: absolute;
   width: 30px;
   height: 30px;
-  left: 10px;
+  left: 20px;
   top: 36px;
 }
 
@@ -95,7 +100,6 @@ footer {
 
 /*
 Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
 */
 .bm-menu-wrap {
   top: 110px;
@@ -105,9 +109,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-
-
-
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -129,9 +130,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Styling of overlay */
 .bm-overlay {
-top: 198px !important;
+  top: 198px !important;
   width: 90% !important;
-
 }
 /* Individual item */
 .bm-item {
@@ -140,17 +140,14 @@ top: 198px !important;
   color: #d1d1d1;
   margin-bottom: 10px;
   text-align: left;
-
 }
 
 .bm-item:hover {
   color: #ffffff;
-
 }
 
 #innerContainer {
   margin-top: 20px;
-
 }
 
 #card {
@@ -174,20 +171,20 @@ top: 198px !important;
   border: 0px;
 }
 
-.card-item-puppies{
+.card-item-puppies {
   background-color: #373a47;
   color: #f1f5f8;
   width: 35em;
   margin: 0 auto;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.btn-loading{
-    border: 2px solid rgba(0, 196, 204);
-    background-color: rgba(0, 196, 204);
-    color: #f1f5f8;
-    padding: 10px;
-    margin: 10px;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  }
+.btn-loading {
+  border: 2px solid rgba(0, 196, 204);
+  background-color: rgba(0, 196, 204);
+  color: #f1f5f8;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
